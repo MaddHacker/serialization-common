@@ -1,6 +1,8 @@
-package com.maddhacker.ol.serialization.hessian;
+package com.maddhacker.ol.serialization.hessian.serializer;
 
 import org.joda.time.DateTime;
+
+import com.maddhacker.ol.serialization.hessian.JodaConstants;
 
 /**
  * Serializes DateTime objects in the Joda Time API.

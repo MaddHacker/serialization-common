@@ -1,6 +1,8 @@
-package com.maddhacker.ol.serialization.hessian;
+package com.maddhacker.ol.serialization.hessian.deserializer;
 
 import org.joda.time.LocalTime;
+
+import com.maddhacker.ol.serialization.hessian.JodaConstants;
 
 /**
  * Deserializes LocalTime objects in the Joda Time API.

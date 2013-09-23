@@ -1,4 +1,4 @@
-package com.maddhacker.ol.serialization.hessian;
+package com.maddhacker.ol.serialization.hessian.serializer;
 
 import java.io.IOException;
 
