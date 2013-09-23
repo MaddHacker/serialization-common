@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.maddhacker.ol</groupId>
+	<artifactId>serialization-common</artifactId>
+	<name>Common Serialization Library</name>
+	<description>Common serialization mappings for JSON, XML and Hessian support</description>
+	<packaging>jar</packaging>
+	<version>0.1.0-SNAPSHOT</version>
+
+	<developers>
+		<developer>
+			<id>maddhacker</id>
+			<name>The MaddHacker</name>
+			<email>hacker@maddhacker.com</email>
+		</developer>
+	</developers>
+
+	<properties>
+		<commons.collections.version>3.2.1</commons.collections.version>
+		<commons.lang.3.version>3.1</commons.lang.3.version>
+		<hessian.version>4.0.33</hessian.version>
+		<jersey.version>1.17.1</jersey.version>
+		<joda.time.version>2.2</joda.time.version>
+		<junit.version>4.11</junit.version>
+		<slf4j.version>1.7.5</slf4j.version>
+
+		<plugin.maven.compiler.version>3.1</plugin.maven.compiler.version>
+		<plugin.maven.dependency.version>2.8</plugin.maven.dependency.version>
+		<plugin.maven.deploy.version>2.7</plugin.maven.deploy.version>
+		<plugin.maven.eclipse.version>2.9</plugin.maven.eclipse.version>
+		<plugin.maven.jar.version>2.4</plugin.maven.jar.version>
+		<plugin.maven.javadoc.version>2.9.1</plugin.maven.javadoc.version>
+		<plugin.maven.resources.version>2.6</plugin.maven.resources.version>
+		<plugin.maven.source.version>2.2.1</plugin.maven.source.version>
+
+		<java.version>1.6</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- <maven.test.failure.ignore>true</maven.test.failure.ignore> -->
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>${commons.collections.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons.lang.3.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+			<version>${hessian.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${joda.time.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<!-- =============================== -->
+	<!-- Probably should remove this... -->
+	<!-- =============================== -->
+	<distributionManagement>
+		<repository>
+			<id>bariel.artifactory.libs-release</id>
+			<name>Bariel Releases</name>
+			<url>http://artifactory.bariel.co.uk/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>bariel.artifactory.libs-snapshot</id>
+			<name>Bariel Snapshots</name>
+			<url>http://artifactory.bariel.co.uk/libs-snapshot-local</url>
+			<uniqueVersion>true</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+	<repositories>
+		<repository>
+			<id>bariel.artifactory.central</id>
+			<name>Bariel Artifactory Repository</name>
+			<url>http://artifactory.bariel.co.uk/repo</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>bariel.artifactory.snapshots</id>
+			<name>Bariel Artifactory Snapshot Repository</name>
+			<url>http://artifactory.bariel.co.uk/repo</url>
+			<snapshots />
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>bariel.artifactory.plugins-release</id>
+			<name>Bariel Plugins Releases</name>
+			<url>http://artifactory.bariel.co.uk/plugins-release-local</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>bariel.artifactory.plugins-snapshot</id>
+			<name>Bariel Plugins Snapshots</name>
+			<url>http://artifactory.bariel.co.uk/plugins-snapshot-local</url>
+			<snapshots />
+		</pluginRepository>
+	</pluginRepositories>
+	<!-- ==================================== -->
+	<!-- (END) Probably should remove this... -->
+	<!-- ==================================== -->
+
+	<build>
+		<!-- http://maven.apache.org/ref/3.1.0/maven-core/lifecycles.html -->
+		<defaultGoal>clean install</defaultGoal>
+
+		<!-- http://maven.apache.org/plugins/index.html -->
+		<plugins>
+
+			<!-- http://maven.apache.org/plugins/maven-resources-plugin/ -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${plugin.maven.resources.version}</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- http://maven.apache.org/plugins/maven-deploy-plugin/ -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${plugin.maven.deploy.version}</version>
+			</plugin>
+
+			<!-- http://maven.apache.org/plugins/maven-dependency-plugin/ -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>${plugin.maven.dependency.version}</version>
+			</plugin>
+
+			<!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${plugin.maven.compiler.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- http://maven.apache.org/plugins/maven-jar-plugin/ -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${plugin.maven.jar.version}</version>
+			</plugin>
+
+			<!-- http://maven.apache.org/plugins/maven-source-plugin/ -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${plugin.maven.source.version}</version>
+				<executions>
+					<execution>
+						<!-- <phase>deploy</phase> -->
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- http://maven.apache.org/plugins/maven-javadoc-plugin/ -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${plugin.maven.javadoc.version}</version>
+				<executions>
+					<execution>
+						<!-- <phase>deploy</phase> -->
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>${plugin.maven.eclipse.version}</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+					<additionalBuildcommands>
+						<buildCommand>
+							<name>org.eclipse.ajdt.core.ajbuilder</name>
+							<arguments>
+								<aspectPath>org.springframework.aspects</aspectPath>
+							</arguments>
+						</buildCommand>
+						<buildCommand>
+							<name>org.springframework.ide.eclipse.core.springbuilder</name>
+						</buildCommand>
+					</additionalBuildcommands>
+					<additionalProjectnatures>
+						<projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
