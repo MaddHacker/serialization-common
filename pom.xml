@@ -19,6 +19,14 @@
 		</developer>
 	</developers>
 
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
 	<properties>
 		<commons.collections.version>3.2.1</commons.collections.version>
 		<commons.lang.3.version>3.1</commons.lang.3.version>
