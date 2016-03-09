@@ -28,7 +28,7 @@
 	</licenses>
 
 	<properties>
-		<commons.collections.version>3.2.1</commons.collections.version>
+		<commons.collections.version>3.2.2</commons.collections.version>
 		<commons.lang.3.version>3.1</commons.lang.3.version>
 		<hessian.version>4.0.33</hessian.version>
 		<jersey.version>1.17.1</jersey.version>
